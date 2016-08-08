@@ -24,12 +24,27 @@
 
 
 # Body
+def eval_loop():
+    user_input = ''
+    answer = "'none'"      # initializing variable 'answer'
+    while user_input != 'done':   # loop will continue till the user enters done  as the input
+        user_input = input('Please enter the expression to be evaluated: ')
+        try:
+            if user_input != 'done':
+                answer = eval(str(user_input))
+                print('The answer is :' + str(answer))
+            else:
+                return answer
+                break
 
+        except:
+            print(" Not a valid expression ")
 
 ###############################################################################
 def main():
-    pass  # Remove this line and uncomment below once eval_loop is defined.
-    # eval_loop()
+    
+    a = eval_loop()
+    print('The last answer was ' + str(a))
 
 if __name__ == '__main__':
     main()

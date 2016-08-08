@@ -11,19 +11,38 @@
 #         - then ends the program
 ################################################################################
 # Imports
-
+import random
 
 # Body
-
-
+def random_guess():
+    num = random.randint(1, 25)
+    count = 0
+    while count < 5:
+        try:
+            user_input = int(input('Please guess a random number between 1 and 25 = '))
+            if (user_input == num):
+                print('You got it right!')
+                count += 1
+                break
+            elif(user_input < num):
+                print('The number was too low.')
+                count += 1
+                continue
+            else:
+                print('The number was too high.')
+                count += 1
+                continue
+        except:
+            print('Not a number.')
+            count += 1
+    else:
+        print('The random number was ' + str(num))
 
 
 ################################################################################
 def main():
 
-
-    print("Hello World!") # Remove this and replace with your function calls
-    
+    random_guess()
 
 if __name__ == '__main__':
     main()
